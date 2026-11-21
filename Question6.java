@@ -34,36 +34,6 @@ public class Question6{
 
         
 
-        Map<String, List<Employee>> group = list.stream()
-                .collect(Collectors.groupingBy(
-                        e -> e.department,
-                        LinkedHashMap::new,
-                        Collectors.toList()
-                ));
-
-        System.out.println("1. Department Wise Employees");
-
-        ArrayList<String> departments = new ArrayList<>(group.keySet());
-
-        for (int i = 0; i < departments.size(); i++) {
-            String dept = departments.get(i);
-
-            System.out.println("\nDepartment: " + dept);
-
-            List<Employee> employees = group.get(dept);
-
-            for (int j = 0; j < employees.size(); j++) {
-                employees.get(j).display();
-            }
-        }
-
-
-        System.out.println("\n2. Highest Paid Employee");
-
-        /*
-        ye krna hai mujhe
-         */
-
         // 3. Second Highest Distinct Salary
 
         double secondSalary = list.stream()
